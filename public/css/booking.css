@@ -1,0 +1,538 @@
+:root {
+    --primary-green: #5b7c4d;
+    --secondary-green: #a3c585;
+    --light-green: #eaf5e3;
+    --soft-yellow: #f7f6d4;
+    --accent-yellow: #f3e9a6;
+    --text-dark: #2e3d27;
+    --text-light: #fff;
+    --border-radius: 14px;
+    --shadow: 0 4px 16px rgba(91, 124, 77, 0.1);
+    --font-main: "Georgia", "Times New Roman", serif;
+    --font-alt: "Montserrat", Arial, sans-serif;
+}
+
+body {
+    background: url("../images/halaman.jpg") center/cover no-repeat;
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container {
+    border-radius: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow);
+    padding: 32px 24px;
+}
+
+.booking-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--primary-green);
+    font-family: var(--font-main);
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.3rem;
+}
+
+/* --- FORM BOOKING 2 KOLUMN --- */
+.form-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 24px rgba(91, 124, 77, 0.1);
+    padding: 32px 28px 24px 28px;
+    margin: 0 auto 18px auto;
+    width: 100%;
+    max-width: 540px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-flex-2col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+    margin-bottom: 18px;
+}
+
+.form-flex-2col .form-group {
+    flex: 1 1 45%;
+    min-width: 220px;
+    margin: 0;
+}
+
+.form-group-full {
+    flex: 1 1 100%;
+    min-width: 0;
+    margin-top: 8px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: var(--primary-green);
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 38px 10px 12px;
+    border: 1px solid var(--secondary-green);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: var(--font-alt);
+    background: var(--soft-yellow);
+    transition: border 0.2s;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+.form-group input[type="file"] {
+    padding: 7px 12px;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-green);
+    outline: none;
+}
+
+.form-group .input-icon {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    pointer-events: none;
+}
+
+.form-card button[type="submit"] {
+    width: 100%;
+    margin-top: 18px;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    background: linear-gradient(90deg, #5b7c4d, #a3c585);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-alt);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(91, 124, 77, 0.1);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.form-card button[type="submit"]:hover {
+    background: linear-gradient(90deg, #a3c585, #5b7c4d);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* --- BOOKING MAIN LAYOUT --- */
+.booking-main {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.booking-form {
+    flex: 1 1 370px;
+    min-width: 320px;
+    max-width: 540px;
+}
+
+.booking-info {
+    flex: 1 1 320px;
+    max-width: 400px;
+    min-width: 260px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 28px 18px 18px 18px;
+    margin-top: 0;
+    margin-right: 40px;
+}
+
+.booking-info h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.room-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.room-card {
+    background: var(--soft-yellow);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 16px 14px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    border-left: 6px solid var(--primary-green);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.room-card:hover {
+    box-shadow: 0 8px 32px rgba(91, 124, 77, 0.18);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.room-thumb-wrap {
+    width: 90px;
+    height: 70px;
+    background: var(--light-green);
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.room-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.room-card h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+.room-card .price {
+    color: var(--primary-green);
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+.room-card .room-desc {
+    font-size: 0.97rem;
+    color: var(--text-dark);
+}
+
+/* --- ALERT --- */
+.alert {
+    padding: 14px 18px;
+    border-radius: var(--border-radius);
+    margin-bottom: 18px;
+    font-family: var(--font-alt);
+    font-size: 1rem;
+}
+
+.alert-success {
+    background: var(--secondary-green);
+    color: var(--text-light);
+}
+
+.alert-error {
+    background: #e57373;
+    color: #fff;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .booking-main {
+        flex-direction: column;
+        gap: 28px;
+    }
+    .booking-form,
+    .booking-info {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 16px 4vw;
+    }
+    .form-card {
+        padding: 18px 6vw 16px 6vw;
+        max-width: 98vw;
+    }
+    .form-flex-2col .form-group,
+    .form-group-full {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+    .room-list {
+        gap: 12px;
+    }
+    .room-card {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 4px;
+    }
+    .room-thumb-wrap {
+        width: 100%;
+        height: 60vw;
+        max-height: 120px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tambahanan   : Custom form style khusus halaman login, feedback, booking */
+.custom-form-input {
+    border: 1.5px solid #b7cbb0;
+    border-radius: 8px;
+    padding: 10px 36px 10px 12px;
+    font-size: 1rem;
+    background: #f8faf7;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+    margin-top: 4px;
+    box-sizing: border-box;
+}
+.custom-form-input:focus {
+    border: 1.5px solid #5b7c4d;
+    box-shadow: 0 0 0 2px #e3f1e6;
+    background: #fff;
+}
+.custom-form-textarea {
+    border: 1.5px solid #b7cbb0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    background: #f8faf7;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+    margin-top: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+.custom-form-textarea:focus {
+    border: 1.5px solid #5b7c4d;
+    box-shadow: 0 0 0 2px #e3f1e6;
+    background: #fff;
+}
+
+/* Admin Dashboard Menu Tile */
+.admin-menu-group {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin: 32px 0 0 0;
+    flex-wrap: wrap;
+}
+.admin-menu-tile {
+    background: #f8faf7;
+    border: 1.5px solid #b7cbb0;
+    border-radius: 12px;
+    padding: 18px 32px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #4e6b3a;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(91,124,77,0.07);
+    transition: box-shadow 0.18s, border 0.18s, background 0.18s, color 0.18s;
+    display: inline-block;
+    text-align: center;
+    min-width: 160px;
+    margin-bottom: 8px;
+}
+.admin-menu-tile:hover, .admin-menu-tile:focus {
+    background: #e3f1e6;
+    border: 1.5px solid #5b7c4d;
+    color: #5b7c4d;
+    box-shadow: 0 4px 18px rgba(91,124,77,0.13);
+    text-decoration: none;
+}
+@media (max-width: 700px) {
+    .admin-menu-group {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .admin-menu-tile {
+        width: 90%;
+        min-width: 0;
+        padding: 16px 0;
+    }
+}
+
+/* Admin Action Button */
+.admin-action-btn {
+    border: none;
+    border-radius: 7px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    padding: 6px 18px;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 8px rgba(91,124,77,0.07);
+    outline: none;
+}
+.admin-action-btn--delete {
+    background: #e57373;
+    color: #fff;
+}
+.admin-action-btn--delete:hover, .admin-action-btn--delete:focus {
+    background: #c94a4a;
+}
+.admin-action-btn--edit {
+    background: #a3c585;
+    color: #355b1c;
+}
+.admin-action-btn--edit:hover, .admin-action-btn--edit:focus {
+    background: #7fa85a;
+    color: #fff;
+}
+
+/* Admin Table Style */
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(91,124,77,0.07);
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+.admin-table th, .admin-table td {
+    padding: 12px 14px;
+    text-align: left;
+}
+.admin-table th {
+    background: #e3f1e6;
+    color: #4e6b3a;
+    font-weight: 700;
+    border-bottom: 2px solid #b7cbb0;
+}
+.admin-table tr:nth-child(even) {
+    background: #f8faf7;
+}
+.admin-table tr:hover {
+    background: #eaf6ee;
+}
+.admin-table td {
+    border-bottom: 1px solid #e0e6de;
+    vertical-align: middle;
+}
+.admin-table td:last-child, .admin-table th:last-child {
+    text-align: center;
+}
+.admin-status-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: #fff;
+    background: #a3c585;
+}
+.admin-status-badge--confirmed {
+    background: #5b7c4d;
+}
+.admin-status-badge--pending {
+    background: #e5b85c;
+}
+.admin-status-badge--cancelled {
+    background: #e57373;
+}
+@media (max-width: 700px) {
+    .admin-table th, .admin-table td {
+        padding: 10px 6px;
+        font-size: 0.97rem;
+    }
+}
+
+/* Promo Form Row */
+.promo-form-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+}
+.promo-form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 120px;
+}
+.promo-form-group.code { flex: 0 0 140px; }
+.promo-form-group.desc { flex: 2 1 320px; }
+.promo-form-group.discount { flex: 0 0 120px; }
+.promo-form-action {
+    flex: 0 0 auto;
+    align-self: stretch;
+    display: flex;
+    align-items: flex-end;
+}
+.promo-form-action button {
+    height: 42px;
+    min-height: 42px;
+    line-height: 1.2;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+.promo-form-row .custom-form-input {
+    height: 42px;
+    min-height: 42px;
+    box-sizing: border-box;
+}
+/* Promo Table Action Buttons */
+.promo-table-action {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
